@@ -1,5 +1,3 @@
-# Task 1 - Tabel Penelusuran (Tracing While Loop)
-
 total = 0
 n = 1
 

@@ -1,5 +1,3 @@
-# Task 3 - Mengelompokkan Masalah Pencatatan Suhu Mesin
-
 tertinggi = None
 urutan_tertinggi = None
 banyak_diatas_80 = 0

@@ -1,5 +1,3 @@
-# Task 4 - Rekap Data Produksi Harian (Pola Akumulator & Pencacah)
-
 TARGET = 50
 HARI = 10
 

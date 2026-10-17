@@ -1,5 +1,3 @@
-# Task 4 - Rekap Produksi Harian Lini Perakitan (Studi Kasus Modul 3)
-
 TARGET = 100
 PENANDA = -1
 

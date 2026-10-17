@@ -1,5 +1,3 @@
-# Task 2 - Menentukan Nilai Ekstrem (Laba Tertinggi & Bulan Terjadinya)
-
 tertinggi = None
 bulan_tertinggi = None
 

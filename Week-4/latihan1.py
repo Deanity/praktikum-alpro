@@ -1,6 +1,3 @@
-# Latihan 1: Penyaringan (Filtering Data)
-# Modul Praktikum 3 (Latihan 5)
-
 TARGET = 50
 HARI = 10
 

@@ -1,6 +1,3 @@
-# Latihan 1: Percabangan Bertingkat
-# Modul Praktikum 2: Percabangan Bertingkat dan Perulangan Dasar
-
 umur = int(input("Masukkan umur: "))
 kartu_pelajar = input("Punya kartu pelajar? (ya/tidak): ")
 

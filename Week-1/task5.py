@@ -1,5 +1,3 @@
-# Task 5 - Kalkulator Percabangan Sederhana
-
 angka1 = int(input("Masukkan Angka Pertama: "))
 operator = input("Masukkan Operator (+, -, *, /): ")
 angka2 = int(input("Masukkan Angka Kedua: "))

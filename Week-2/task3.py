@@ -1,5 +1,3 @@
-# Task 3 - Variasi Range Step dan While Loop
-
 print("Perulangan For dengan Langkah (Step 2):")
 for i in range(1, 10, 2):
     print(i, end=" ")

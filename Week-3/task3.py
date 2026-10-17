@@ -1,5 +1,3 @@
-# Task 3 - Masukan Berpenanda (Sentinel -1) dan Rata-rata Durasi Mesin
-
 total = 0
 banyak = 0
 

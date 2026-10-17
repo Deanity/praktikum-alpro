@@ -1,6 +1,3 @@
-# Latihan 3: Masukan Berpenanda (Sentinel) dan Penanganan Data Kosong
-# Modul Praktikum 3 - Pola Perulangan
-
 total = 0
 banyak = 0
 

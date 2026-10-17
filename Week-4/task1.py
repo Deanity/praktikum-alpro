@@ -1,5 +1,3 @@
-# Task 1 - Penyaringan Data Produksi Harian yang Mencapai Target
-
 TARGET = 50
 HARI = 10
 

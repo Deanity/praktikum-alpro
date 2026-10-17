@@ -1,5 +1,3 @@
-# Task 2 - Operasi Aritmatika
-
 angka1 = int(input("Masukkan Angka Pertama: "))
 angka2 = int(input("Masukkan Angka Kedua: "))
 

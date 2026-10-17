@@ -1,5 +1,3 @@
-# Task 1 - Percabangan Bertingkat (Bioskop & Diskon Pelajar)
-
 umur = int(input("Masukkan Umur : "))
 kartu_pelajar = input("Apakah Memiliki Kartu Pelajar? (y/n) : ")
 

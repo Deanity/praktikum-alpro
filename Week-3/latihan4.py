@@ -1,6 +1,3 @@
-# Latihan 4: Pola Akumulator dan Pencacah
-# Modul Praktikum 3 - Pola Perulangan
-
 TARGET = 50
 HARI = 10
 

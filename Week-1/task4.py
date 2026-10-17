@@ -1,5 +1,3 @@
-# Task 4 - Konversi Kategori Nilai
-
 nilai = int(input("Masukkan Nilai Anda: "))
 
 if nilai >= 90:

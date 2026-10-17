@@ -1,6 +1,3 @@
-# Latihan 1 — Deklarasi Variabel dan Tipe Data
-# Modul Praktikum 1: Variabel, Tipe Data, dan Percabangan (if-else)
-
 nama = "Aurora"
 umur = 21
 tinggi_badan = 165.0

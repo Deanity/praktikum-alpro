@@ -1,5 +1,3 @@
-# Task 2 - Menghitung Harga Total dengan Perulangan For
-
 Harga_Satuan = 30000
 
 for i in range(1, 6):

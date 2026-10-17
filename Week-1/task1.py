@@ -1,5 +1,3 @@
-# Task 1 - Input Data Diri Mahasiswa
-
 nama = input("Masukkan Nama Anda: ")
 umur = int(input("Masukkan Umur Anda: "))
 fakultas = input("Masukkan Fakultas Anda: ")

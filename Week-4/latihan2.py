@@ -1,6 +1,3 @@
-# Latihan 2: Nilai Ekstrem dan Jebakan Inisialisasi
-# Modul Praktikum 3 (Latihan 6)
-
 tertinggi = None
 bulan_tertinggi = None
 

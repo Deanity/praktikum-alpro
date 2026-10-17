@@ -1,6 +1,3 @@
-# Latihan 2 — Input dari Pengguna
-# Modul Praktikum 1: Variabel, Tipe Data, dan Percabangan (if-else)
-
 nama = input("Masukkan nama: ")
 umur = int(input("Masukkan umur: "))
 

@@ -1,12 +1,3 @@
-# Studi Kasus: Rekap Produksi Harian Lini Perakitan
-# Modul Praktikum 3 - Pola Perulangan: Penelusuran, Penanda, dan Pengolahan Data
-
-# Sub-masalah dan Pola:
-# 1. Total dan rata-rata seluruh hari  -> Akumulator & Pencacah
-# 2. Hari mencapai target (>= 100)    -> Penyaringan & Pencacah
-# 3. Tertinggi dan terendah (+ hari)  -> Nilai Ekstrem
-# 4. Tantangan tambahan: Rata-rata hari yang mencapai target
-
 TARGET = 100
 PENANDA = -1
 
@@ -26,7 +17,6 @@ while produksi != PENANDA:
     banyak_hari += 1
     total_produksi += produksi
     
-    # Nilai ekstrem: pada hari pertama, inisialisasi langsung
     if banyak_hari == 1:
         tertinggi = produksi
         hari_tertinggi = 1
@@ -40,7 +30,6 @@ while produksi != PENANDA:
             terendah = produksi
             hari_terendah = banyak_hari
             
-    # Penyaringan target
     if produksi >= TARGET:
         hari_target += 1
         total_target += produksi
@@ -59,7 +48,6 @@ else:
     print(f"Tertinggi: {tertinggi} unit (hari ke-{hari_tertinggi})")
     print(f"Terendah : {terendah} unit (hari ke-{hari_terendah})")
     
-    # Tantangan Tambahan: rata-rata produksi hanya dari hari yang mencapai target
     if hari_target > 0:
         rata_target = total_target / hari_target
         print(f"Rata-rata hari target  : {rata_target:.2f}")

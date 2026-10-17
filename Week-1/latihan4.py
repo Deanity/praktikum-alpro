@@ -1,6 +1,3 @@
-# Latihan 4 — Percabangan if-elif-else
-# Modul Praktikum 1: Variabel, Tipe Data, dan Percabangan (if-else)
-
 nilai = int(input("Masukkan nilai ujian (0-100): "))
 
 if nilai >= 85:
