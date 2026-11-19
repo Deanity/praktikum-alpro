@@ -1,25 +1,21 @@
-def nilaimahasiswa(n):
-    if n >= 85:
-        print("A")
-    elif n >= 75:
-        print("AB")
-    elif n >= 65:
-        print("B")
-    elif n >= 55:
-        print("BC")
-    elif n > 50:
-        print("C")
-    else:
-        return "D"
+def nilai_huruf(nilai):
+    if nilai >= 85:
+        return "A"
+    elif nilai >= 70:
+        return "B"
+    elif nilai >= 55:
+        return "C"
+    return "D"
 
-def kelulusan(n):
-    return n >= 60
+
+def lulus(nilai):
+    return nilai >= 55
+
 
 for i in range(3):
-    nilai = int(input("Masukkan Nilai: "))
-
-    if kelulusan(nilai):
+    n = int(input("Nilai: "))
+    if lulus(n):
         status = "Lulus"
-    else: 
-        status = "Tidak Lulus"
-    print(f"Nilai: {nilai} | Huruf: {nilaimahasiswa(nilai)} | Status: {status}")
+    else:
+        status = "Tidak lulus"
+    print(n, "->", nilai_huruf(n), "|", status)

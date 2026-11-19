@@ -1,17 +1,17 @@
-def celciuskefarenhit(c):
+def celsius_ke_fahrenheit(c):
     return c * 9 / 5 + 32
 
-def luaspersegipanjang(p, l):
-    return p * l 
 
-suhu = float(input("Masukkan Suhu (C)"))
-f = celciuskefarenhit(suhu)
-print("Farenhit: ", f)
+def luas_persegi_panjang(p, l):
+    return p * l
 
-luaskamar = luaspersegipanjang(3,4)
-print(luaskamar)
 
-luasdapur = luaspersegipanjang(6,5)
-print(luasdapur)
+suhu = float(input("Suhu (Celsius): "))
+f = celsius_ke_fahrenheit(suhu)
+print("Fahrenheit:", f)
 
-print("Total luas: ", luasdapur + luaskamar)
+luas_kamar = luas_persegi_panjang(4, 3)
+luas_dapur = luas_persegi_panjang(3, 2)
+print("Luas kamar:", luas_kamar)
+print("Luas dapur:", luas_dapur)
+print("Total luas:", luas_kamar + luas_dapur)
