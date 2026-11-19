@@ -1,3 +1,8 @@
+# Sub-masalah dan Pola:
+# 1. Suhu tertinggi beserta urutan pencatatan -> Pola: Nilai ekstrem (tertinggi = None, urutan_tertinggi = None)
+# 2. Banyak suhu melebihi 80 derajat -> Pola: Penyaringan & Pencacah (banyak_diatas_80 = 0)
+# 3. Rata-rata suhu yang melebihi 80 derajat -> Pola: Penyaringan & Akumulator (total_diatas_80 = 0)
+
 tertinggi = None
 urutan_tertinggi = None
 banyak_diatas_80 = 0

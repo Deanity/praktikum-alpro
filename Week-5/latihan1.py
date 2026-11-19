@@ -4,7 +4,7 @@ def cetak_garis(panjang):
 
 def kartu_nama(nama, prodi):
     cetak_garis(30)
-    print("Nama :", nama)
+    print("Nama  :", nama)
     print("Prodi :", prodi)
     cetak_garis(30)
 

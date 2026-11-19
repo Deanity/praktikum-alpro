@@ -1,3 +1,8 @@
+# Sub-masalah dan Pola:
+# 1. Total dan rata-rata produksi -> Pola: Akumulator (total_produksi) dan Pencacah (banyak_hari)
+# 2. Hari mencapai target -> Pola: Penyaringan dan Pencacah (hari_target)
+# 3. Produksi tertinggi dan terendah -> Pola: Nilai ekstrem dengan penanda hari awal
+
 TARGET = 100
 PENANDA = -1
 
@@ -41,13 +46,14 @@ if banyak_hari == 0:
     print("Belum ada data produksi.")
 else:
     rata_rata = total_produksi / banyak_hari
-    print(f"Banyak hari            : {banyak_hari}")
-    print(f"Total produksi         : {total_produksi}")
-    print(f"Rata-rata per hari     : {rata_rata:.2f}")
+    print(f"Banyak hari       : {banyak_hari}")
+    print(f"Total produksi    : {total_produksi}")
+    print(f"Rata-rata per hari: {rata_rata:.2f}")
     print(f"Hari mencapai target ({TARGET}): {hari_target}")
     print(f"Tertinggi: {tertinggi} unit (hari ke-{hari_tertinggi})")
     print(f"Terendah : {terendah} unit (hari ke-{hari_terendah})")
     
+    # Tantangan tambahan: rata-rata produksi hari yang mencapai target
     if hari_target > 0:
         rata_target = total_target / hari_target
-        print(f"Rata-rata hari target  : {rata_target:.2f}")
+        print(f"Rata-rata hari target: {rata_target:.2f}")

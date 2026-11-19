@@ -1,4 +1,4 @@
-# Laporan Praktikum Week 3 — Pola Perulangan: Penelusuran, Penanda, dan Pengolahan Data
+# Laporan Praktikum Week 3 — Pola Perulangan: Penelusuran, Penanda, dan Pengolahan Data (Bagian 1)
 
 ## Identitas Diri
 ```py
@@ -12,13 +12,13 @@ Dosen = "Adzanil Rachmadhi Putra"
 
 ## Deskripsi Program
 
-Praktikum Week 3 membahas teknik perancangan, verifikasi, dan analisis algoritma perulangan (*looping*) secara mendalam. Pembahasan tidak lagi berfokus pada sintaks dasar, melainkan pada keandalan logika struktur perulangan melalui **tabel penelusuran (*trace table*)**, **analisis jaminan berhenti (*termination guarantee*)**, **pencegahan kesalahan satu putaran (*off-by-one error*)**, serta **pola masukan berpenanda (*sentinel loop*)**. Selain itu, praktikum ini membedah empat pola dasar pengolahan data dalam perulangan, yaitu: **akumulator**, **pencacah (*counter*)**, **penyaringan (*filtering*)**, dan **penelusuran nilai ekstrem**.
+Praktikum Week 3 berfokus pada teknik analisis, verifikasi, dan perancangan pola dasar perulangan Python 3 sesuai Modul Praktikum 3 Bagian 1. Pembahasan berfokus pada keandalan logika struktur perulangan melalui **tabel penelusuran (*trace table*)**, **analisis jaminan berhenti (*termination guarantee*)**, **pencegahan kesalahan satu putaran (*off-by-one error*)**, serta **pola masukan berpenanda (*sentinel loop*)** dan **pola akumulator-pencacah dasar**.
 
-Program-program yang dipelajari dan diimplementasikan pada pertemuan ini meliputi:
-1. **`latihan1.py` (dan `task1.py`)**: Program kalkulasi kelipatan dua dari rentang 1 hingga 5 menggunakan perulangan `while` yang dianalisis secara manual menggunakan tabel penelusuran untuk memverifikasi perubahan state variabel `n` dan `total`.
-2. **`latihan2.py` (dan `task2.py`)**: Program penjumlahan deret bilangan 1 sampai $n$. Program ini merefleksikan proses identifikasi galat *off-by-one* (perbedaan operator `<` vs `<=`) dan pengujian kondisi batas ($n = 5$, $n = 1$, dan data nol $n = 0$).
-3. **`latihan3.py` (dan `task3.py`)**: Program penghitung rata-rata waktu proses mesin berbasis *sentinel value* `-1` dengan menerapkan pola baca ganda (*read-twice pattern*) serta mekanisme proteksi data kosong (*zero-division guard*).
-4. **`latihan4.py` (dan `task4.py`)**: Program rekapitulasi data produksi harian lini pabrik selama 10 hari yang mengintegrasikan pola akumulator (`total`) dan pola pencacah bersyarat (`di_bawah`) terhadap target harian.
+Kumpulan program yang diimplementasikan pada pertemuan Week 3 meliputi:
+1. `latihan1.py`: Program kalkulasi penjumlahan kelipatan dua dari rentang $n = 1$ hingga $5$ menggunakan perulangan `while`, diverifikasi menggunakan tabel penelusuran langkah demi langkah untuk melacak perubahan nilai `n` dan `total`.
+2. `latihan2.py`: Program penjumlahan deret bilangan 1 sampai $n$ yang merefleksikan identifikasi kesalahan *off-by-one* (perbedaan kondisi `<` vs `<=`) serta verifikasi kondisi batas ($n = 5$, $n = 1$, dan $n = 0$).
+3. `latihan3.py`: Program penghitung rata-rata waktu proses mesin berbasis nilai penanda (*sentinel*) `-1` dengan menerapkan pola baca ganda (*read-twice pattern*) serta proteksi penanganan data kosong (*zero-division guard*).
+4. `latihan4.py`: Program rekapitulasi data produksi harian lini pabrik selama 10 hari yang mengintegrasikan pola akumulator (`total`) dan pola pencacah bersyarat (`di_bawah`) terhadap target harian.
 
 ---
 
@@ -30,12 +30,12 @@ Program-program yang dipelajari dan diimplementasikan pada pertemuan ini meliput
 | **Pembaruan Nilai Melangkah (*Step*)** | Operasi Penambahan Monotonik | `latihan1.py`, baris 6 | Pernyataan `n = n + 1` menjamin kondisi `n <= 5` suatu saat bernilai `False`. |
 | **Koreksi Batas Atas Deret** | *Inclusive Boundary Guard (`<=`)* | `latihan2.py`, baris 5 | Memastikan nilai batas atas $n$ ikut diproses, mencegah hilangnya iterasi terakhir. |
 | **Penanganan Batas Nol (*Boundary Case*)** | Evaluasi Kondisi Awal Instan | `latihan2.py`, baris 5, 9 | Menjamin masukan $n = 0$ langsung mengabaikan blok perulangan tanpa memicu galat. |
-| **Pola Pembacaan Ganda (*Read-Twice*)** | *Pre-read & Loop-end Read Pattern* | `latihan3.py`, baris 4, 9 | Membaca sebelum loop dan di akhir blok agar nilai sentinel `-1` tidak ikut terproses. |
+| **Pola Pembacaan Ganda (*Read-Twice*)** | *Pre-read & Loop-end Read Pattern* | `latihan3.py`, baris 4, 9 | Membaca sebelum loop dan di akhir blok agar nilai sentinel `-1` tidak ikut terproses sebagai data. |
 | **Penghitungan Frekuensi Kejadian** | *Counter Pattern* | `latihan3.py`, baris 8 | Menambahkan pencacah `banyak = banyak + 1` setiap ada durasi yang sah. |
-| **Pencegahan Galat Pembagian Nol** | *Zero-Division Guard Condition* | `latihan3.py`, baris 11–15 | Mengevaluasi `if banyak == 0` sebelum menghitung rata-rata `total / banyak`. |
+| **Pencegahan Galat Pembagian Nol** | *Zero-Division Guard Condition* | `latihan3.py`, baris 11–15 | Mengevaluasi `if banyak == 0:` sebelum menghitung rata-rata `total / banyak`. |
 | **Pembulatan Presisi Rata-Rata** | Fungsi Intrinsik `round()` | `latihan3.py`, baris 15 | Memformat presisi nilai desimal rata-rata hingga dua digit di belakang koma. |
 | **Akumulasi Kuantitas Produksi** | *Accumulator Pattern* | `latihan4.py`, baris 9 | Menjumlahkan unit produksi harian ke dalam variabel `total`. |
-| **Penyaringan Terhadap Ambang Batas** | *Conditional Counter Filtering* | `latihan4.py`, baris 10–11 | Menyaring hari yang produksinya di bawah batas target (`produksi < TARGET`). |
+| **Pencacahan Ambang Batas** | *Conditional Counter Filtering* | `latihan4.py`, baris 10–11 | Mencacah hari yang produksinya di bawah batas target (`produksi < TARGET`). |
 | **Kalkulasi Rata-Rata Terdistribusi** | Operasi Pembagian Skalar Konstan | `latihan4.py`, baris 14 | Menghitung rata-rata harian dengan membagi akumulator terhadap konstanta `HARI`. |
 
 ---
@@ -138,21 +138,21 @@ Kode program: `total = 0; n = 1; while n <= 5: total = total + n * 2; n = n + 1`
 | 5 | 5 | **True** | 10 | $20 + 10 = 30$ | 6 |
 | 6 | 6 | **False** | - | Perulangan Berhenti | 6 |
 
-*Hasil Akhir Tercetak*: `total = 30` (Kondisi diperiksa sebanyak **6 kali**, dengan **5 kali iterasi sukses**).
+*Hasil Akhir*: `total = 30` (Kondisi diperiksa **6 kali**, menghasilkan **5 kali iterasi sukses**).
 
 ---
 
 ### 2. Tabel Komparasi Kondisi Batas `latihan2.py` ($n = 5$)
 
-Perbandingan antara kode sebelum perbaikan (`i < n`) dan sesudah perbaikan (`i <= n`):
+Perbandingan antara kode awal dengan bug (`i < n`) dan kode setelah koreksi (`i <= n`):
 
-| Pemeriksaan ke- | Nilai `i` | Kondisi Bug `i < 5` | `total` (Bug) | Kondisi Perbaikan `i <= 5` | `total` (Valid) | Keterangan |
+| Pemeriksaan ke- | Nilai `i` | Kondisi Awal `i < 5` | `total` (Bug) | Kondisi Perbaikan `i <= 5` | `total` (Valid) | Keterangan |
 | :---: | :---: | :---: | :---: | :---: | :---: | :--- |
 | 1 | 1 | True | 1 | True | 1 | $0 + 1$ |
 | 2 | 2 | True | 3 | True | 3 | $1 + 2$ |
 | 3 | 3 | True | 6 | True | 6 | $3 + 3$ |
 | 4 | 4 | True | 10 | True | 10 | $6 + 4$ |
-| 5 | 5 | **False (Macet)** | **10 (Salah)** | **True** | **15 (Benar)** | Pada kode bug, $i = 5$ terlewat |
+| 5 | 5 | **False (Macet)** | **10 (Salah)** | **True** | **15 (Benar)** | Pada kode awal, $i = 5$ terlewat |
 | 6 | 6 | - | - | **False (Selesai)**| 15 | Berhenti pada batas yang tepat |
 
 ---
@@ -176,57 +176,53 @@ Masukan urut: `12`, `15`, `10`, `-1`
 | :---: | :--- | :--- | :--- | :--- | :--- | :---: |
 | 1 | `latihan1.py` | **Normal** | Loop otomatis ($n=1..5$) | `total = 30` | `total = 30` | PASS |
 | 2 | `latihan2.py` | **Normal** | $n = 5$ | `Jumlah: 15` | `Jumlah: 15` | PASS |
-| 3 | `latihan2.py` | **Batas** | $n = 1$ | `Jumlah: 1` | `Jumlah: 1` | PASS |
-| 4 | `latihan2.py` | **Batas Ekstrem** | $n = 0$ | `Jumlah: 0` (langsung lewati loop) | `Jumlah: 0` | PASS |
-| 5 | `latihan3.py` | **Normal** | 12, 15, 10, -1 | Banyak data: 3, Rata-rata: 12.33 menit | Sesuai ekspektasi | PASS |
-| 6 | `latihan3.py` | **Kasus Kosong** | Langsung memasukkan `-1` | "Belum ada data yang dimasukkan." | Sesuai ekspektasi | PASS |
-| 7 | `latihan4.py` | **Normal** | 48, 52, 39, 61, 55, 44, 58, 36, 63, 50 | Total: 506, Rata-rata: 50.6, Di bawah target: 4 | Sesuai ekspektasi | PASS |
-| 8 | `task1.py` | **Regresi** | Loop otomatis ($n=1..5$) | `total = 30` | `total = 30` | PASS |
-| 9 | `task2.py` | **Batas** | $n = 5$ | `Jumlah: 15` | `Jumlah: 15` | PASS |
-| 10 | `task3.py` | **Kasus Kosong** | Langsung memasukkan `-1` | "Belum ada data yang dimasukkan." | Sesuai ekspektasi | PASS |
-| 11 | `task4.py` | **Batas Nilai**| 10 hari produksi tepat 50 | Total: 500, Di bawah target: 0 | Sesuai ekspektasi | PASS |
+| 3 | `latihan2.py` | **Batas Bawah** | $n = 1$ | `Jumlah: 1` | `Jumlah: 1` | PASS |
+| 4 | `latihan2.py` | **Batas Nol** | $n = 0$ | `Jumlah: 0` (langsung lewati loop) | `Jumlah: 0` | PASS |
+| 5 | `latihan3.py` | **Normal** | 12, 15, 10, -1 | Banyak data: 3, Rata-rata: 12.33 menit | Sesuai output modul | PASS |
+| 6 | `latihan3.py` | **Data Kosong** | Langsung memasukkan `-1` | "Belum ada data yang dimasukkan." | Sesuai output modul | PASS |
+| 7 | `latihan4.py` | **Normal** | 48, 52, 39, 61, 55, 44, 58, 36, 63, 50 | Total produksi: 506<br>Rata-rata per hari: 50.6<br>Hari di bawah target: 4 | Sesuai output modul | PASS |
+| 8 | `latihan4.py` | **Variasi Target**| TARGET = 55 (data sama) | Hari di bawah target: 6 | Sesuai ekspektasi modul | PASS |
 
 ---
 
-## Catatan Galat
+## Catatan Pertanyaan Modul & Analisis Galat
 
-1. **Galat Kondisi Batas (*Off-by-One Logic Error*)**:
-   - *Penyebab*: Penggunaan operator komparasi relasional strictly less than (`i < n`) pada struktur `while` di `latihan2.py`. Hal ini mengakibatkan iterasi putaran ke-$n$ terlewatkan sebelum sempat diakumulasikan.
-   - *Cara Menemukan*: Pengujian manual terhadap nilai masukan batas $n = 5$ menghasilkan total `10` alih-alih `15`. Melalui penelusuran tabel, ditemukan bahwa loop berhenti saat $i = 5$.
-   - *Perbaikan*: Mengganti operator relasional menjadi perbandingan inklusif `while i <= n:`.
+### Jawaban Pertanyaan Praktik Modul:
+1. **Latihan 1 (Langkah 5)**: Berapa kali kondisi diperiksa pada program awal (`n <= 5`) dan pada program yang sudah diubah (`n < 5`)?
+   - *Jawaban*: Pada program awal (`n <= 5`), kondisi diperiksa sebanyak **6 kali** (5 kali True, 1 kali False menghentikan perulangan; total = 30). Pada program yang diubah (`n < 5`), kondisi diperiksa sebanyak **5 kali** (4 kali True, 1 kali False saat $n=5$; total = 20).
+2. **Latihan 2 (Langkah 6)**: Mengapa $n = 0$ menghasilkan 0 dan bukan pesan galat?
+   - *Jawaban*: Karena variabel pengontrol diinisialisasi `i = 1`. Saat pertama kali dievaluasi pada `while i <= 0:`, perbandingan langsung bernilai `False`. Akibatnya, badan perulangan tidak pernah dimasuki sama sekali dan program langsung mencetak nilai awal `total` yaitu `0`.
+3. **Latihan 3 (Langkah 5)**: Mengapa memindahkan baris input ke awal blok `while` membuat banyak data dan rata-ratanya berbeda?
+   - *Jawaban*: Data pertama (12) langsung tertimpa oleh data kedua (15) sebelum sempat ditambahkan ke `total` dan `banyak`. Selain itu, saat pengguna mengetik nilai penanda `-1`, nilai `-1` tersebut terbaca di baris pertama blok dan ikut diakumulasikan ke dalam `total` serta menambah pencacah `banyak` sebelum kondisi `while` sempat memeriksa dan menghentikannya.
+4. **Latihan 4 (Langkah 5)**: Variabel mana yang berperan sebagai akumulator dan variabel mana yang berperan sebagai pencacah?
+   - *Jawaban*: Variabel `total` berperan sebagai **akumulator** (menjumlahkan nilai data produksi tiap hari: `total = total + produksi`), sedangkan variabel `di_bawah` berperan sebagai **pencacah** (menghitung banyaknya kejadian dengan selalu menambah satu: `di_bawah = di_bawah + 1`).
 
-2. **Galat Penempatan Masukan Penanda (*Read-Twice Inversion Bug*)**:
-   - *Penyebab*: Menempatkan perintah pembacaan masukan kedua di awal baris blok perulangan alih-alih di akhir blok pada `latihan3.py`.
-   - *Cara Menemukan*: Saat program diuji, data pertama yang dimasukkan sebelum loop langsung tertimpa oleh data kedua tanpa sempat diakumulasikan. Selain itu, nilai sentinel `-1` ikut dijumlahkan ke dalam variabel `total` dan menaikkan nilai variabel `banyak`.
-   - *Perbaikan*: Menerapkan pola pembacaan ganda secara disiplin: pembacaan pertama diletakkan tepat sebelum `while`, dan pembacaan pembaruan diletakkan tepat di baris paling akhir di dalam blok `while`.
-
-3. **Galat Pembagian dengan Nol (*ZeroDivisionError Runtime Error*)**:
-   - *Penyebab*: Melakukan kalkulasi rata-rata `total / banyak` saat pengguna langsung memasukkan nilai penanda `-1` pada input pertama.
-   - *Cara Menemukan*: Program mengalami *crash* mendadak dengan pesan `ZeroDivisionError: division by zero` ketika diuji dengan skenario tanpa transaksi data.
-   - *Perbaikan*: Memasang blok percabangan penjaga (*guard condition*) `if banyak == 0:` guna menampilkan pesan peringatan dan mencegah eksekusi pembagian aritmatika.
+### Analisis Galat Teknis:
+1. **Galat Kesalahan Satu Putaran (*Off-by-One Logic Error*)**:
+   - *Penyebab*: Penggunaan operator `<` alih-alih `<=` pada `while i < n:` di `latihan2.py`.
+   - *Perbaikan*: Mengubah kondisi menjadi inklusif `while i <= n:`.
+2. **Galat Pembagian Nol (*ZeroDivisionError*)**:
+   - *Penyebab*: Membagi `total / banyak` saat tidak ada data yang dimasukkan (langsung input `-1`).
+   - *Perbaikan*: Memasang *guard condition* `if banyak == 0:`.
 
 ---
 
 ## Refleksi
 
-Praktikum Week 3 memberikan pemahaman yang sangat penting bahwa kode yang sintaksnya benar (*bebas dari SyntaxError*) belum tentu menghasilkan logika yang dapat dipercaya. Pembuatan tabel penelusuran (*trace table*) membuktikan fungsinya sebagai alat verifikasi logika paling efektif sebelum program dieksekusi di komputer. Dengan menuliskan kondisi dan pembaruan variabel langkah demi langkah di kertas, kesalahan tersembunyi seperti *off-by-one error* dan penanganan nilai batas ($n=0$) dapat diidentifikasi secara presisi.
+Praktikum Week 3 membuktikan bahwa sintaks yang valid secara teknis belum tentu menjamin kebenaran logika algoritma. Pembuatan tabel penelusuran (*trace table*) di atas kertas sangat efektif untuk mendeteksi *off-by-one error* dan memahami kapan evaluasi terakhir bernilai `False`.
 
-Pola masukan berpenanda (*sentinel*) juga memberikan paradigma baru dalam menangani data yang dinamis tanpa harus mengetahui kuantitasnya di awal. Penerapan pola baca dua kali (*read-twice*) mengajarkan disiplin penataan urutan instruksi di dalam badan perulangan agar nilai sentinel murni berfungsi sebagai terminator, bukan sebagai bagian dari data komputasi.
-
-Batasan pada implementasi saat ini adalah masukan pengguna masih mengandalkan fungsi `int(input())` tanpa blok penangkap galat `try-except`. Apabila pengguna memasukkan teks non-numerik (misalnya string huruf saat diminta durasi), program akan mengalami *crash* dengan eksepsi `ValueError`.
+Penerapan pola masukan berpenanda (*sentinel*) dengan metode baca ganda (*read-twice*) memberikan solusi yang aman untuk memproses data tanpa mengetahui ukurannya di awal, sekaligus menjamin penanda tidak ikut dihitung ke dalam data agregasi.
 
 ---
 
 ## Pengungkapan Penggunaan AI
 
 - **Bagian yang Dibantu AI**:
-  - Penyusunan format visual tabel penelusuran komparatif (*trace table*) antara kondisi bug `i < n` versus perbaikan `i <= n`.
-  - Pembuatan diagram alir Mermaid terstruktur untuk merepresentasikan siklus baca ganda masukan berpenanda (*sentinel loop*) beserta proteksi data kosong.
-  - Formulasi skenario kasus uji batas (*edge cases*), terutama pada pengujian masukan nilai batas $n = 0$ dan masukan penanda instan.
+  - Format tabel penelusuran (*trace table*) dan tabel komparasi kondisi batas $i < n$ vs $i \le n$.
+  - Perancangan diagram alir Mermaid untuk pola baca ganda masukan berpenanda.
+  - Penataan jawaban sistematis terhadap pertanyaan panduan dari Modul Praktikum 3.
 - **Saran AI yang Dipakai**:
-  - Penambahan visualisasi alur percabangan data kosong (`banyak == 0`) pada flowchart `latihan3.py` untuk menegaskan prinsip *defensive programming*.
-  - Perancangan tabel dekomposisi masalah dengan kategorisasi pola pemrograman (Akumulator, Pencacah, *Boundary Guard*, *Read-Twice Pattern*).
+  - Penambahan visualisasi alur proteksi data kosong (`banyak == 0`) pada pseudocode dan flowchart `latihan3.py`.
+  - Format pengujian boundary value analysis ($n=5, n=1, n=0$).
 - **Saran AI yang Ditolak & Alasannya**:
-  - Penambahan modul fungsi built-in `sum()` dan generator `range()` untuk menyederhanakan `latihan2.py`, ditolak karena tujuan instruksional modul adalah menguasai alur eksplisit perulangan `while` dan analisis state variabel secara manual.
-  - Penyisipan penanganan eksepsi `try-except ValueError`, ditolak untuk menjaga kepatuhan terhadap batasan materi resmi Modul 3.
-
+  - Penggunaan `sum()` atau `range()` untuk menyederhanakan `latihan2.py`, ditolak agar tetap melatih logika manual algoritma perulangan `while`.

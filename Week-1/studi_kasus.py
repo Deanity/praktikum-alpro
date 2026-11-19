@@ -1,5 +1,5 @@
 nama = input("Masukkan nama mahasiswa: ")
-nilai = int(input("Masukkan nilai akhir (0-100): "))
+nilai = int(input("Masukkan nilai akhir: "))
 
 if nilai >= 60:
     status = "LULUS"

@@ -12,22 +12,16 @@ Dosen = "Adzanil Rachmadhi Putra"
 
 ## Deskripsi Program
 
-Praktikum Week 2 berfokus pada penguasaan struktur kontrol tingkat lanjut di Python, mencakup **percabangan bertingkat (*nested if*)**, **perulangan terhitung (*for loop* dengan fungsi `range()`*)**, **perulangan bersyarat (*while loop*)**, serta **perintah pengontrol aliran perulangan (`break` dan `continue`)**.
+Praktikum Week 2 berfokus pada penguasaan struktur kontrol tingkat lanjut di Python 3 sesuai Modul Praktikum 2 (*Percabangan Bertingkat dan Perulangan Dasar*). Topik utama mencakup **percabangan bertingkat (*nested if*)**, **perulangan terhitung (*for loop* dan fungsi `range()`*)**, **perulangan bersyarat (*while loop*)**, serta **perintah pengontrol loncatan aliran perulangan (`break` dan `continue`)**.
 
 Kumpulan program yang dikembangkan pada praktikum ini terdiri dari:
 1. **Latihan Terbimbing**:
-   - `latihan1.py`: Penerapan *nested if* untuk validasi usia dan kepemilikan kartu pelajar pada pembelian tiket bioskop.
-   - `latihan2.py`: Penggunaan perulangan `for` dan fungsi `range()` untuk enumerasi angka serta pembuatan tabel perkalian matematika.
-   - `latihan3.py`: Penerapan perulangan `while` akumulatif berbasis *sentinel value* (berhenti ketika input angka bernilai 0).
-   - `latihan4.py`: Simulasi kendali loncatan perulangan menggunakan kata kunci `break` (terminasi paksa) dan `continue` (pintas iterasi).
+   - `latihan1.py`: Penerapan percabangan bertingkat (*nested if*) untuk validasi kelayakan usia menonton film 17+ dan pengecekan kepemilikan kartu pelajar guna penentuan harga tiket.
+   - `latihan2.py`: Penggunaan perulangan `for` bersama fungsi `range()` untuk enumerasi bilangan dari 1 hingga 5 serta pembuatan tabel perkalian 3.
+   - `latihan3.py`: Penerapan perulangan `while` akumulatif berbasis nilai penanda (*sentinel value*) di mana perulangan terus berjalan menjumlahkan angka hingga pengguna memasukkan angka `0`.
+   - `latihan4.py`: Pengendalian alur iterasi menggunakan kata kunci `break` (menghentikan perulangan saat mencapai angka 8) dan `continue` (melewati bilangan genap) untuk mencetak deret ganjil.
 2. **Studi Kasus (`studi_kasus.py`)**:
-   - Program rekapitulasi nilai kuis kelas terintegrasi yang memadukan `for loop` (iterasi mahasiswa), `while loop` (*input guard* validasi rentang nilai 0–100), *nested if* (klasifikasi kategori nilai bertingkat: Lulus Sangat Baik, Lulus, Remedial, Tidak Lulus), serta pelacakan nilai ekstrem (tertinggi dan terendah) dan kalkulasi rata-rata kelas.
-3. **Tugas Mandiri (`task1.py` – `task5.py`)**:
-   - `task1.py`: Variasi seleksi tiket bioskop dengan metode penanganan string case-insensitive (`.lower()`).
-   - `task2.py`: Perhitungan total harga kelipatan barang belanjaan berbasis perulangan `for`.
-   - `task3.py`: Implementasi *step parameter* pada `range()` dan perulangan `while` dengan *loop counter*.
-   - `task4.py`: Konstruksi *infinite loop* (`while True`) dengan terminasi berbasis kondisi `break`.
-   - `task5.py`: Pemecahan masalah klasik algoritma *FizzBuzz* dari angka 1 hingga 29 menggunakan operator logika modulo `%`.
+   - Program Rekap Nilai Kuis Kelas yang memadukan `for loop` (iterasi sebanyak jumlah mahasiswa), `while loop` (*input guard* untuk memvalidasi rentang nilai valid 0–100), percabangan bertingkat (*nested if* untuk menentukan kategori kelulusan: *Lulus Sangat Baik*, *Lulus*, *Remedial*, *Tidak Lulus*), kalkulasi rata-rata kelas, akumulator jumlah per kategori, serta pencarian nilai ekstrem (tertinggi dan terendah).
 
 ---
 
@@ -35,18 +29,15 @@ Kumpulan program yang dikembangkan pada praktikum ini terdiri dari:
 
 | Sub-Masalah | Plan Pemrograman | Letak di Program | Keterangan |
 | :--- | :--- | :--- | :--- |
-| **Penyaringan Syarat Berlapis** | *Nested If Statement* | `latihan1.py`, baris 4–10 | Mengevaluasi usia $\ge 17$ tahun terlebih dahulu sebelum mengecek kepemilikan kartu pelajar. |
-| **Tabel Perkalian Dinamis** | *Count-Controlled Loop (`for`)* | `latihan2.py`, baris 7–8 | Menggunakan `range(1, 6)` untuk menghasilkan pengali dan mengkalkulasi hasil kali 3. |
-| **Akumulasi Berhenti Berpenanda** | *Sentinel-Controlled While Loop* | `latihan3.py`, baris 4–6 | Mengulang pembacaan masukan hingga pengguna memasukkan angka penanda `0`. |
-| **Interupsi Aliran Iterasi** | *Control Jump (`break` & `continue`)* | `latihan4.py`, baris 3–6 | `continue` memfilter bilangan genap, sedangkan `break` menghentikan loop saat $i = 8$. |
-| **Validasi Rentang Masukan Nilai** | *Input Guard Pattern (`while`)* | `studi_kasus.py`, baris 13–15 | Meminta input berulang jika nilai $< 0$ atau $> 100$ sebelum diproses lebih lanjut. |
-| **Kategori Kelulusan Berlapis** | *Hierarchical Nested If* | `studi_kasus.py`, baris 17–29 | Membagi ambang batas lulus ($\ge 60$) menjadi Sangat Baik/Lulus, dan gagal menjadi Remedial/Tidak Lulus. |
-| **Pelacakan Nilai Ekstrem (Max/Min)** | *Extremum Accumulator Pattern* | `studi_kasus.py`, baris 34–37 | Menginisialisasi `terendah = None` dan memperbarui nilai maksimum serta minimum secara bertahap. |
-| **Normalisasi Masukan Teks** | *String Method Transformation* | `task1.py`, baris 8 | Menggunakan `.lower()` agar masukan huruf kapital seperti `'Y'` tetap dikenali valid. |
-| **Kalkulasi Skala Harga Parsial** | *Linear Multiplier Loop* | `task2.py`, baris 3–5 | Mengalikan konstanta harga satuan terhadap indeks perulangan sepatu 1 hingga 5. |
-| **Pengaturan Interval Langkah Iterasi** | *Step Argument in `range()`* | `task3.py`, baris 2–3 | Memanfaatkan `range(1, 10, 2)` untuk memproduksi deret ganjil secara langsung. |
-| **Penghentian Paksa Loop Tak Terbatas** | *Infinite Loop with Break Sentinel* | `task4.py`, baris 2–6 | Menggunakan `while True` yang diinterupsi oleh evaluasi kondisi `angka > 5`. |
-| **Klasifikasi Pola Modular (FizzBuzz)** | *Compound Conditional Logic* | `task5.py`, baris 2–9 | Evaluasi kondisi majemuk (`% 3 == 0 and % 5 == 0`) diletakkan paling awal. |
+| **Penyaringan Syarat Berlapis** | *Nested If Statement* | `latihan1.py`, baris 4–10 | Mengevaluasi usia $\ge 17$ tahun terlebih dahulu; jika lolos, mengevaluasi status kartu pelajar. |
+| **Enumerasi & Deret Terhitung** | *Count-Controlled Loop (`for`)* | `latihan2.py`, baris 2–3 | Memanfaatkan `range(1, 6)` untuk mencetak deret angka 1 sampai 5. |
+| **Kalkulasi Tabel Perkalian** | *Loop with Linear Multiplier* | `latihan2.py`, baris 7–8 | Mengalikan konstanta 3 dengan variabel iterasi `i` pada rentang `range(1, 6)`. |
+| **Akumulasi Berhenti Berpenanda** | *Sentinel-Controlled While Loop* | `latihan3.py`, baris 4–6 | Mengulang penambahan nilai ke `total` hingga masukan `angka == 0`. |
+| **Interupsi Aliran Iterasi** | *Control Jump (`break` & `continue`)* | `latihan4.py`, baris 3–6 | `continue` mengabaikan bilangan genap (`i % 2 == 0`) dan `break` menghentikan loop seketika saat `i == 8`. |
+| **Validasi Rentang Masukan Nilai** | *Input Guard Pattern (`while`)* | `studi_kasus.py`, baris 13–15 | Meminta masukan ulang secara iteratif jika nilai $< 0$ atau $> 100$. |
+| **Klasifikasi Kategori Bertingkat** | *Hierarchical Nested If* | `studi_kasus.py`, baris 17–29 | Membagi evaluasi awal pada ambang batas 60, lalu memperinci ke 85 (Sangat Baik) atau 40 (Remedial). |
+| **Pelacakan Nilai Ekstrem (Max/Min)**| *Extremum Accumulator Pattern* | `studi_kasus.py`, baris 34–37 | Memperbarui nilai `tertinggi` dan `terendah` (dengan sentinel awal `None`) di setiap iterasi. |
+| **Rekapitulasi Statistik Kelas** | Operasi Agregasi & Format Output | `studi_kasus.py`, baris 39–48 | Menghitung rata-rata kelas berpresisi satu desimal (`.1f`) dan mencetak ringkasan hasil rekap. |
 
 ---
 
@@ -63,7 +54,7 @@ flowchart TD
     E -- Tidak --> F["Hitung rata_rata = total / jumlah_mahasiswa"]
     F --> G["Cetak Rekap: Rata-rata, Tertinggi, Terendah, Lulus, Remedial, Tidak Lulus"]
     G --> H([Selesai])
-    E -- Ya --> I["Input: nilai"]
+    E -- Ya --> I["Input: nilai mahasiswa ke-i"]
     I --> J{nilai < 0 ATAU nilai > 100?}
     J -- Ya --> K["Cetak 'Nilai harus 0-100, coba lagi'"]
     K --> I
@@ -100,7 +91,7 @@ MASUKAN : jumlah_mahasiswa, nilai (setiap mahasiswa) : INTEGER
 KELUARAN: kategori per mahasiswa, rata_rata, tertinggi, terendah, lulus, remedial, tidak_lulus
 
 DEKLARASI:
-    total, lulus, remedial, tidak_lulus, tertinggi, jumlah_mahasiswa, i : INTEGER
+    total, lulus, remedial, tidak_lulus, tertinggi, jumlah_mahasiswa, i, nilai : INTEGER
     terendah : INTEGER ATAU NULL
     rata_rata : FLOAT
     kategori : STRING
@@ -169,25 +160,27 @@ SELESAI
 
 ---
 
-### Pseudocode `task5.py` (FizzBuzz Algorithm)
+### Pseudocode `latihan1.py` (Percabangan Bertingkat Tiket)
 
 ```text
-ALGORITMA FizzBuzz
-MASUKAN : -
-KELUARAN: Angka atau label "Fizz", "Buzz", "FizzBuzz"
+ALGORITMA PenentuanTiketBioskop
+MASUKAN : umur : INTEGER, kartu_pelajar : STRING
+KELUARAN: status kelayakan usia dan nominal harga tiket
 
 PROSES:
-    UNTUK i DARI 1 SAMPAI 29 LAKUKAN
-        JIKA (i MOD 3 = 0) DAN (i MOD 5 = 0) MAKA
-            TAMPILKAN "FizzBuzz"
-        SELAIN ITU JIKA (i MOD 3 = 0) MAKA
-            TAMPILKAN "Fizz"
-        SELAIN ITU JIKA (i MOD 5 = 0) MAKA
-            TAMPILKAN "Buzz"
+    BACA umur
+    BACA kartu_pelajar
+
+    JIKA umur >= 17 MAKA
+        TAMPILKAN "Umur memenuhi syarat nonton film 17+"
+        JIKA kartu_pelajar = "ya" MAKA
+            TAMPILKAN "Tiket: harga pelajar Rp30000"
         SELAIN ITU
-            TAMPILKAN i
+            TAMPILKAN "Tiket: harga umum Rp45000"
         AKHIR JIKA
-    AKHIR UNTUK
+    SELAIN ITU
+        TAMPILKAN "Maaf, film ini khusus usia 17 tahun ke atas"
+    AKHIR JIKA
 SELESAI
 ```
 
@@ -195,7 +188,7 @@ SELESAI
 
 ## Tabel Penelusuran (Trace Table)
 
-Penelusuran manual terhadap skenario masukan pada `studi_kasus.py` (Data Modul Hal. 7):
+Penelusuran manual terhadap skenario masukan pada `studi_kasus.py` sesuai data contoh Modul Halaman 7:
 - Jumlah mahasiswa: `5`
 - Rangkaian masukan nilai: `80`, `55`, `120 (salah)` $\to$ diulang `90`, `60`, `30`
 
@@ -214,64 +207,65 @@ Penelusuran manual terhadap skenario masukan pada `studi_kasus.py` (Data Modul H
 
 ## Tabel Kasus Uji
 
-| No | Program | Kategori | Masukan (*Input*) | Hasil yang Diharapkan (*Expected*) | Hasil Program (*Actual*) | Status |
+| No | Program | Kategori Uji | Masukan (*Input*) | Hasil yang Diharapkan (*Expected*) | Hasil Program (*Actual*) | Status |
 | :---: | :--- | :--- | :--- | :--- | :--- | :---: |
-| 1 | `latihan1.py` | **Normal** | umur = 20, kartu = "ya" | "Umur memenuhi syarat nonton film 17+"<br>"Tiket: harga pelajar Rp30000" | Sesuai harapan | PASS |
-| 2 | `latihan1.py` | **Normal** | umur = 20, kartu = "tidak" | "Umur memenuhi syarat nonton film 17+"<br>"Tiket: harga umum Rp45000" | Sesuai harapan | PASS |
-| 3 | `latihan1.py` | **Batas** | umur = 16, kartu = "ya" | "Maaf, film ini khusus usia 17 tahun ke atas" | Sesuai harapan | PASS |
-| 4 | `latihan3.py` | **Normal** | 10, 20, 5, 0 | Total semua angka: 35 | Sesuai harapan | PASS |
-| 5 | `latihan4.py` | **Logika/Aliran**| range(1, 11) | Hanya mencetak ganjil (1, 3, 5, 7) dan berhenti sebelum 8 | Sesuai harapan | PASS |
-| 6 | `studi_kasus.py` | **Batas** | nilai = 85 | Kategori: "Lulus Sangat Baik" | Sesuai harapan | PASS |
-| 7 | `studi_kasus.py` | **Batas** | nilai = 60 | Kategori: "Lulus" | Sesuai harapan | PASS |
-| 8 | `studi_kasus.py` | **Batas** | nilai = 40 | Kategori: "Remedial" | Sesuai harapan | PASS |
-| 9 | `studi_kasus.py` | **Batas** | nilai = 39 | Kategori: "Tidak Lulus" | Sesuai harapan | PASS |
-| 10 | `studi_kasus.py` | **Tidak Valid** | nilai = -10 $\to$ ulang 75 | "Nilai harus 0-100, coba lagi" lalu diterima | Sesuai harapan | PASS |
-| 11 | `studi_kasus.py` | **Tidak Valid** | nilai = 105 $\to$ ulang 85 | "Nilai harus 0-100, coba lagi" lalu diterima | Sesuai harapan | PASS |
-| 12 | `task1.py` | **Normal** | umur = 18, kartu = "Y" | Mengenali huruf kapital melalui `.lower()` $\to$ Diskon Pelajar | Sesuai harapan | PASS |
-| 13 | `task4.py` | **Batas Loop** | Inisial angka = 1 | Mencetak "Angka ke- 1" s.d. "Angka ke- 5" lalu break | Sesuai harapan | PASS |
-| 14 | `task5.py` | **Kondisi Khusus**| i = 15 | Mencetak "FizzBuzz" (kelipatan 3 sekaligus 5) | Sesuai harapan | PASS |
+| 1 | `latihan1.py` | **Normal** | umur = 20, kartu = "ya" | "Umur memenuhi syarat nonton film 17+"<br>"Tiket: harga pelajar Rp30000" | Sesuai output modul | PASS |
+| 2 | `latihan1.py` | **Normal** | umur = 20, kartu = "tidak" | "Umur memenuhi syarat nonton film 17+"<br>"Tiket: harga umum Rp45000" | Sesuai output modul | PASS |
+| 3 | `latihan1.py` | **Batas Bawah** | umur = 15, kartu = "ya" | "Maaf, film ini khusus usia 17 tahun ke atas" | Sesuai output modul | PASS |
+| 4 | `latihan2.py` | **Normal** | *(Tanpa input)* | Menghitung 1 s.d. 5 dan tabel perkalian 3 (3 x 1 = 3 s.d. 3 x 5 = 15) | Sesuai output modul | PASS |
+| 5 | `latihan3.py` | **Normal** | 10, 20, 5, 0 | Total semua angka: 35 | Sesuai output modul | PASS |
+| 6 | `latihan4.py` | **Aliran Kontrol** | *(Tanpa input)* | Mencetak hanya ganjil (1, 3, 5, 7) dan berhenti sebelum angka 8 | Sesuai output modul | PASS |
+| 7 | `studi_kasus.py` | **Batas (Sangat Baik)**| nilai = 85 | Kategori: Lulus Sangat Baik | Sesuai harapan | PASS |
+| 8 | `studi_kasus.py` | **Batas (Lulus)** | nilai = 60 | Kategori: Lulus | Sesuai harapan | PASS |
+| 9 | `studi_kasus.py` | **Batas (Remedial)** | nilai = 40 | Kategori: Remedial | Sesuai harapan | PASS |
+| 10 | `studi_kasus.py` | **Batas (Tidak Lulus)**| nilai = 39 | Kategori: Tidak Lulus | Sesuai harapan | PASS |
+| 11 | `studi_kasus.py` | **Input Guard** | nilai = 120 $\to$ ulang 90 | "Nilai harus 0-100, coba lagi" lalu diterima nilai 90 | Sesuai output modul | PASS |
+| 12 | `studi_kasus.py` | **Rekap Lengkap** | 5 mhs (80, 55, 120$\to$90, 60, 30) | Rata-rata: 63.0, Max: 90, Min: 30, Lulus: 3, Remedial: 1, Tidak Lulus: 1 | Sesuai output modul | PASS |
 
 ---
 
-## Catatan Galat
+## Catatan Pertanyaan Modul & Analisis Galat
 
-1. **Galat Loop Tak Berujung (*Infinite Loop*)**:
-   - *Penyebab*: Menghilangkan baris pembaruan masukan `angka = int(input(...))` di dalam blok `while` pada `latihan3.py`.
-   - *Cara Menemukan*: Program tidak pernah berhenti meminta input atau mencetak angka secara terus-menerus tanpa akhir sampai konsol dihentikan paksa menggunakan kombinasi tombol `Ctrl + C`.
-   - *Perbaikan*: Memastikan variabel kondisi loop (`angka`) selalu diperbarui di dalam badan perulangan sebelum iterasi berikutnya dievaluasi.
+### Jawaban Pertanyaan Praktik Modul:
+1. **Latihan 1 (Langkah 4)**: Mengapa pertanyaan kartu pelajar tetap diajukan pada umur 15 tetapi tidak berpengaruh pada hasil?
+   - *Jawaban*: Karena perintah `kartu_pelajar = input(...)` dieksekusi secara sekuensial sebelum struktur `if umur >= 17:`. Ketika kondisi `umur >= 17` bernilai `False`, alur program langsung melompat ke blok `else` luar tanpa pernah mengevaluasi percabangan kartu pelajar di dalamnya.
+2. **Latihan 4 (Langkah 4)**: Angka berapa saja yang dilewati oleh `continue`, dan pada angka berapa `break` menghentikan perulangan?
+   - *Jawaban*: Kata kunci `continue` melewati seluruh bilangan genap (yaitu angka `2`, `4`, dan `6`). Kata kunci `break` menghentikan loop seketika pada saat variabel iterasi `i` bernilai `8`, sehingga angka `8`, `9`, dan `10` tidak pernah diproses sama sekali.
 
-2. **Galat Penentuan Nilai Ekstrem Minimum (*Logic Bug in Min Value*)**:
-   - *Penyebab*: Menginisialisasi variabel `terendah = 0` sebelum perulangan. Akibatnya, jika seluruh mahasiswa memperoleh nilai positif (misal: 60, 75, 90), nilai terendah akan tetap bernilai `0` karena tidak ada nilai yang lebih kecil dari 0.
-   - *Cara Menemukan*: Melalui verifikasi hasil uji pada `studi_kasus.py`, nilai terendah yang muncul adalah `0`, bukan nilai aktual terkecil dari data masukan mahasiswa.
-   - *Perbaikan*: Menginisialisasi `terendah = None` dan menggunakan kondisi `if terendah is None or nilai < terendah:` pada baris 36 agar nilai mahasiswa pertama otomatis menjadi acuan awal minimum.
+### Analisis Potensi Galat:
+1. **Galat Perulangan Tak Berujung (*Infinite Loop*)**:
+   - *Penyebab*: Menghilangkan pembacaan ulang input `angka = int(input(...))` di dalam blok `while` pada `latihan3.py` (Langkah 4).
+   - *Cara Menemukan*: Nilai `angka` tidak pernah berubah menjadi `0`, sehingga kondisi `angka != 0` selalu bernilai `True` dan program menjumlahkan angka yang sama berulang-ulang tanpa henti hingga dipaksa berhenti dengan `Ctrl + C`.
+   - *Perbaikan*: Memastikan variabel pengendali kondisi perulangan selalu di-*update* di dalam badan loop `while`.
 
-3. **Galat Urutan Kondisi Bersyarat (*Short-circuit / Logic Ordering Error*)**:
-   - *Penyebab*: Meletakkan pengecekan `elif i % 3 == 0` sebelum pengecekan kelipatan persekutuan `if i % 3 == 0 and i % 5 == 0` pada algoritma FizzBuzz (`task5.py`).
-   - *Cara Menemukan*: Angka 15 tercetak sebagai `"Fizz"` alih-alih `"FizzBuzz"`, karena kondisi pertama langsung terpenuhi (*short-circuit*).
-   - *Perbaikan*: Memposisikan kondisi yang paling spesifik/ketat (kondisi gabungan `and`) di baris paling atas struktur percabangan.
+2. **Galat Logika Pelacakan Nilai Minimum (*Minimum Tracking Logic Error*)**:
+   - *Penyebab*: Menginisialisasi variabel `terendah = 0`. Jika seluruh mahasiswa mendapatkan nilai positif (misal: 60, 80, 90), nilai terendah akan tetap `0` karena tidak ada nilai yang $< 0$.
+   - *Cara Menemukan*: Rekapitulasi akhir menampilkan `Terendah : 0` padahal tidak ada mahasiswa yang mendapat nilai 0.
+   - *Perbaikan*: Menginisialisasi dengan `terendah = None` dan menggunakan evaluasi kondisi majemuk `if terendah is None or nilai < terendah:` agar nilai mahasiswa pertama langsung menjadi acuan awal minimum.
 
 ---
 
 ## Refleksi
 
-Materi Week 2 memberikan pemahaman mendalam tentang bagaimana memadukan dua struktur kendali utama: percabangan bertingkat (*nested if*) dan perulangan (*looping*). Bagian yang paling memuaskan adalah saat berhasil menerapkan pola *input guard* pada `studi_kasus.py`, di mana perulangan `while` mampu menahan alur eksekusi sampai pengguna memberikan nilai yang benar-benar valid dalam rentang 0 hingga 100.
+Praktikum Week 2 memberikan pemahaman komprehensif mengenai penggabungan percabangan bertingkat (*nested if*) dan perulangan (*looping*). Konsep percabangan bertingkat terbukti sangat berguna saat suatu keputusan bergantung penuh pada pemenuhan syarat di tahap awal.
 
-Tantangan utama yang dihadapi adalah menentukan pemilihan struktur perulangan yang tepat. Perulangan `for` terbukti sangat efektif ketika jumlah data/iterasi sudah pasti (seperti jumlah mahasiswa atau deret angka), sedangkan perulangan `while` menjadi pilihan utama saat menunggu masukan yang dinamis atau menangani kondisi henti berbasis nilai penanda (*sentinel*).
+Dalam hal struktur perulangan, pemilihan antara `for` dan `while` menjadi lebih jelas:
+- `for` digunakan secara terukur ketika jumlah iterasi telah diketahui di awal (seperti jumlah mahasiswa atau deret angka tetap dengan `range()`).
+- `while` digunakan ketika kondisi akhir belum pasti, seperti penerapan *input guard* yang menolak input nilai di luar rentang 0–100 sampai pengguna memasukkan data yang valid.
 
-Batasan yang masih ada pada program praktikum ini adalah program masih mengasumsikan tipe data yang dimasukkan selalu berupa integer. Jika pengguna menginput karakter alfabet atau simbol pada prompt input angka, program akan memunculkan galat `ValueError`. Penanganan eksepsi (*exception handling* `try-except`) akan menjadi solusi ideal untuk penyempurnaan di materi mendatang.
+Pemahaman mekanisme `break` dan `continue` melengkapi kendali alur eksekusi loop, di mana `continue` berfungsi sebagai filter penyaring data yang tidak relevan, sedangkan `break` bertindak sebagai pemutus darurat saat kondisi terminasi terpenuhi.
 
 ---
 
 ## Pengungkapan Penggunaan AI
 
 - **Bagian yang Dibantu AI**:
-  - Konseptualisasi inisialisasi variabel minimum menggunakan sentinel `None` (`terendah = None`) pada `studi_kasus.py` untuk mengatasi cacat logika inisialisasi nol.
-  - Perancangan bagan alir (flowchart) Mermaid yang menggambarkan percabangan bertingkat di dalam perulangan `for`.
-  - Format penyusunan tabel penelusuran (trace table) dan perumusan variasi kasus uji (uji normal, batas, dan nilai tidak valid).
+  - Perancangan bagan alir (*flowchart*) Mermaid yang menggambarkan integrasi perulangan `for`, *input guard* `while`, dan *nested if*.
+  - Penyusunan pseudocode dan tabel penelusuran (*trace table*) yang selaras dengan contoh studi kasus pada Modul Praktikum 2.
+  - Perumusan variasi kasus uji batas (*boundary tests*) dan input tidak valid.
 - **Saran AI yang Dipakai**:
-  - Penambahan tantangan opsional pencarian nilai terendah pada `studi_kasus.py` dengan penanganan nilai awal `None`.
-  - Penggunaan operator ternary satu baris `total / jumlah_mahasiswa if jumlah_mahasiswa > 0 else 0` untuk mencegah potensi galat *ZeroDivisionError* saat jumlah mahasiswa diinput 0.
+  - Penerapan inisialisasi `terendah = None` untuk menyelesaikan tantangan opsional pencarian nilai minimum secara akurat tanpa terganggu bias nilai awal 0.
+  - Penanganan kasus pembagian nol pada rata-rata menggunakan ekspresi kondisional satu baris `total / jumlah_mahasiswa if jumlah_mahasiswa > 0 else 0`.
 - **Saran AI yang Ditolak & Alasannya**:
-  - Saran menggunakan fungsi bawaan `min()` dan `max()` dari pustaka bawaan Python, ditolak agar tetap melatih logika manual algoritma pencarian nilai ekstrem melalui pembandingan bersyarat (`if`).
-  - Saran menggunakan penanganan *exception* `try-except ValueError` pada pembacaan input, ditolak sementara karena belum menjadi cakupan materi resmi pada Modul Praktikum 2.
-
+  - Saran menggunakan fungsi bawaan `min()` dan `max()` dari Python, ditolak agar tetap melatih logika manual algoritma pembandingan bersyarat (`if`) sesuai tujuan pembelajaran modul.
+  - Saran menggunakan penanganan eksepsi `try-except`, ditolak karena materi modul difokuskan pada validasi logika kontrol `while` dan `nested if`.
