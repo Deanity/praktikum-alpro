@@ -133,7 +133,7 @@ Fokus pada modularisasi kode menggunakan fungsi di Python 3 untuk meningkatkan k
 
 ---
 
-## 🅿️ Mini Project: Sistem Manajemen ParkirKu
+## Mini Project: Sistem Manajemen ParkirKu
 
 Proyek berbasis konsol (`MiniProject/`) yang mensimulasikan sistem pencatatan transaksi keluar kendaraan parkir harian secara otomatis dan defensif.
 
@@ -146,7 +146,7 @@ Proyek berbasis konsol (`MiniProject/`) yang mensimulasikan sistem pencatatan tr
 
 ---
 
-## 📂 Struktur Direktori
+## Struktur Direktori
 
 ```text
 Praktikum-Alpro/
@@ -194,7 +194,7 @@ Praktikum-Alpro/
 
 ---
 
-## 🚀 Cara Menjalankan Kode
+## Cara Menjalankan Kode
 
 1. Buka terminal atau Command Prompt / PowerShell.
 2. Masuk ke direktori folder praktikum yang ingin dijalankan, misalnya:
