@@ -31,7 +31,7 @@ Dosen Pengampu: Adzanil Rachmadhi Putra
 
 ---
 
-## 📌 Week 1: Variabel, Tipe Data, dan Percabangan (if-else)
+## Week 1: Variabel, Tipe Data, dan Percabangan (if-else)
 
 Fokus pada pengenalan sintaks dasar Python, aturan penamaan variabel, tipe data primitif, input/output interaktif, serta evaluasi keputusan bersyarat (`if`, `elif`, `else`).
 
@@ -51,7 +51,7 @@ Fokus pada pengenalan sintaks dasar Python, aturan penamaan variabel, tipe data 
 
 ---
 
-## 📌 Week 2: Percabangan Bertingkat dan Perulangan Dasar
+## Week 2: Percabangan Bertingkat dan Perulangan Dasar
 
 Mendalami pengambilan keputusan multi-tahap (*nested if*) dan pengenalan konsep perulangan terkontrol (*definite loop*) serta perulangan bersyarat (*indefinite loop*).
 
@@ -73,7 +73,7 @@ Mendalami pengambilan keputusan multi-tahap (*nested if*) dan pengenalan konsep 
 
 ---
 
-## 📌 Week 3: Pola Perulangan (Penelusuran, Kondisi Batas, dan Sentinel)
+## Week 3: Pola Perulangan (Penelusuran, Kondisi Batas, dan Sentinel)
 
 Fokus pada verifikasi keandalan logika perulangan, analisis jaminan berhenti (*termination guarantee*), pencegahan galat batas (*off-by-one*), dan masukan berpenanda (*sentinel*).
 
@@ -92,7 +92,7 @@ Fokus pada verifikasi keandalan logika perulangan, analisis jaminan berhenti (*t
 
 ---
 
-## 📌 Week 4: Pola Pengolahan Data Lanjut (Penyaringan, Nilai Ekstrem, dan Rekapitulasi)
+## Week 4: Pola Pengolahan Data Lanjut (Penyaringan, Nilai Ekstrem, dan Rekapitulasi)
 
 Melanjutkan pengolahan data terpadu: penyaringan data bersyarat, pelacakan nilai ekstrem (maksimum/minimum) secara aman, serta dekomposisi masalah komputasi (*problem grouping*).
 
@@ -111,7 +111,7 @@ Melanjutkan pengolahan data terpadu: penyaringan data bersyarat, pelacakan nilai
 
 ---
 
-## 📌 Week 5: Fungsi, Parameter, dan Nilai Kembalian
+## Week 5: Fungsi, Parameter, dan Nilai Kembalian
 
 Fokus pada modularisasi kode menggunakan fungsi di Python 3 untuk meningkatkan keterbacaan, efisiensi, pengujian independen, dan pemeliharaan kode (*maintainability*).
 
